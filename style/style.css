@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap");
+* {
+  line-height: 1.7em; }
+
+body {
+  font-size: 16px;
+  height: 100%;
+  font-family: "Baloo Thambi 2", cursive;
+  margin: auto; }
+
+main {
+  overflow-x: hidden; }
+
+header {
+  width: 100%;
+  height: auto;
+  background-image: url(../images/header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white; }
+
+.top-wrap {
+  padding: 24px; }
+
+.menu-button {
+  display: block; }
+
+.nav-wrap {
+  font-size: 18px;
+  font-weight: 400; }
+
+.header-description {
+  padding: 100px 0 50px 0;
+  text-align: center; }
+
+.contact-button {
+  font-size: 18px;
+  background-color: #10c9c3;
+  height: 42px;
+  padding: 6px 0; }
+
+.about-us {
+  text-align: center;
+  padding-bottom: 20px; }
+
+.about-us-container {
+  padding: 100px 0; }
+
+.skills-wrap {
+  width: 100%;
+  height: auto;
+  background-image: url(../images/mainjpg2.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 22px;
+  background-repeat: no-repeat; }
+
+.skills-container {
+  padding: 100px 24px; }
+
+.progress-bar-background {
+  height: 7px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin-bottom: 20px; }
+
+.progress-bar-background > div {
+  background-color: #10c9c3;
+  height: 100%; }
+
+.experience-wrap {
+  color: white;
+  background-color: #10c9c3; }
+
+.experience-wrap .col {
+  padding: 80px 0;
+  display: flex; }
+
+.experience-wrap .col p {
+  margin: 0;
+  font-size: 22px;
+  padding-left: 20px;
+  line-height: 1.6em; }
+
+.projects-wrap {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: auto; }
+
+.project-container .col {
+  padding: 15px; }
+
+.project-container {
+  padding: 24px; }
+
+.project-img {
+  cursor: pointer; }
+
+.load-project-div {
+  background-color: #d8d8d8;
+  cursor: pointer; }
+
+.proccess-video-container {
+  text-align: center;
+  padding: 100px 0; }
+
+.video-frame {
+  height: 520px; }
+
+.elements-wrap {
+  background-color: #d8d8d8; }
+
+.elements-container {
+  padding: 0 24px 0 24px; }
+
+.elements-container .col {
+  text-align: center; }
+
+@media (min-width: 768px) {
+  .menu-button {
+    display: none; } }
+@media (max-width: 767px) {
+  .row.nav-wrap {
+    display: none; }
+
+  .lables {
+    text-align: center; }
+
+  .video-frame {
+    height: 300px; } }
+@media (max-width: 479.98px) {
+  .video-frame {
+    height: 250px; } }
+
+/*# sourceMappingURL=style.css.map */
