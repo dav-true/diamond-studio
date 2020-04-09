@@ -131,8 +131,14 @@ header {
 
 .project-container {
   padding: 24px;
+  padding-bottom: 60px;
+
 }
 
+.project-container h3 {
+  margin-top: 20px;
+  text-align: center;
+}
 
 .project-img {
     cursor: pointer;
@@ -143,9 +149,6 @@ header {
     cursor: pointer;
 }
 
-.proccess-video-wrap {
-  
-}
 
 .proccess-video-container {
     text-align: center;
@@ -166,6 +169,30 @@ header {
 
 .elements-container .col {
   text-align: center;
+}
+
+.quote-wrap {
+  background-color: $mainblue;
+}
+
+.quote-container .col {
+  padding: 70px 0;
+}
+
+.quote-container .col  p{
+  text-align: center;
+  color: $maingrey;
+}
+
+.carousel-indicators  {
+  bottom: -70px;
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
 }
 @media (min-width: 768px) {
   .menu-button {
