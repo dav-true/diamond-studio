@@ -98,9 +98,11 @@ header {
   margin-bottom: 20px;
 }
 
-.progress-bar-background > div {
+.bar-filler {
+  border-radius: 5px;
   background-color: #10c9c3;
   height: 100%;
+  width: 0%;
 }
 
 .experience-wrap {
