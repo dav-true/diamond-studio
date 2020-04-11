@@ -23,6 +23,7 @@ header {
   padding: 24px; }
 
 .menu-button {
+  cursor: pointer;
   display: block; }
 
 .nav-wrap {
@@ -166,6 +167,29 @@ header {
 .order-container {
   padding: 100px 0; }
 
+.close-button {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px; }
+
+.menu-nav {
+  list-style: none; }
+
+.menu-nav li {
+  padding-bottom: 10px; }
+
+.menu-nav li a {
+  color: #141414;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 25px;
+  border-bottom: 1px solid #b1b1b1; }
+
+.menu-nav-div {
+  padding-top: 100px;
+  text-align: center; }
+
 @media (min-width: 768px) {
   .menu-button {
     display: none; } }
@@ -202,6 +226,45 @@ header {
 
 .footer-email p {
   text-align: right; }
+
+.menu-div {
+  top: 0;
+  right: -100%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 12; }
+
+.svg-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  width: 320px; }
+
+.shape {
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #19f6e8;
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s; }
+
+.text {
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #141414;
+  top: -48px;
+  position: relative; }
+
+.svg-wrapper:hover .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760; }
 
 @media (max-width: 767px) {
   .footer-contacts p {
