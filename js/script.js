@@ -37,8 +37,7 @@ function liveCounter (seconds, i, maxLength) {
 }
 
 
-$(document).ready(function() {
-
+$(document).ready( function () {
     $(window).on("scroll", function() {
         var y = $(document).scrollTop();
         var h = $(window).height()
@@ -64,7 +63,7 @@ $(document).ready(function() {
     });
 
    $('.menu-button').click(function () {
-        $('.menu-div').css({
+        $('.menu').css({
             'right' : '0',
             'transition' : 'right 0.4s ease-in-out'
         })
@@ -73,7 +72,7 @@ $(document).ready(function() {
     })
 
     $('.close-button').click(function () {
-        $('.menu-div').css({
+        $('.menu').css({
             'right' : '-100%',
             'transition' : 'right 0.4s ease-in-out'
         })
@@ -81,11 +80,7 @@ $(document).ready(function() {
         $('body').css('overflow-y', 'scroll')
     })
 
-
-  
 });
-
-
 window.addEventListener('DOMContentLoaded', () => {
     var y = $(document).scrollTop();
     console.log(y)
