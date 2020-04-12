@@ -26,6 +26,7 @@ $(document).ready(function() {
         console.log(y)
         
         if(y + h > 1000 && progress_counter == 0) {
+            alert("fuck")
             progress_counter++;
             fillBar(0.7, 0, 84);
             fillBar(1, 1, 89);
