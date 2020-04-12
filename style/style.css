@@ -80,7 +80,7 @@ header {
   padding: 80px 0;
   display: flex; }
 
-.experience-wrap .col p {
+.experience-wrap .col p:last-child {
   margin: 0;
   font-size: 22px;
   padding-left: 20px;
@@ -171,10 +171,12 @@ header {
   cursor: pointer;
   position: absolute;
   top: 10px;
+  z-index: 12;
   right: 10px; }
 
 .menu-nav {
-  list-style: none; }
+  list-style: none;
+  padding: 0; }
 
 .menu-nav li {
   padding-bottom: 10px; }
@@ -183,8 +185,7 @@ header {
   color: #141414;
   text-decoration: none;
   cursor: pointer;
-  font-size: 25px;
-  border-bottom: 1px solid #b1b1b1; }
+  font-size: 25px; }
 
 .menu-nav-div {
   padding-top: 100px;
@@ -228,6 +229,7 @@ header {
   text-align: right; }
 
 .menu-div {
+  overflow-y: scroll;
   top: 0;
   right: -100%;
   position: fixed;
@@ -236,29 +238,35 @@ header {
   background-color: white;
   z-index: 12; }
 
+.exp-nums {
+  font-size: 5px;
+  padding-left: 20px;
+  line-height: 1.6em;
+  margin: 0; }
+
 .svg-wrapper {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  height: 60px;
   margin: 0 auto;
-  width: 320px; }
+  width: 200px; }
 
 .shape {
   stroke-dasharray: 140 540;
-  stroke-dashoffset: -474;
-  stroke-width: 8px;
+  stroke-dashoffset: -282;
+  stroke-width: 5px;
   fill: transparent;
   stroke: #19f6e8;
-  border-bottom: 5px solid black;
+  border-bottom: 2px solid black;
   transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s; }
 
 .text {
   font-family: 'Roboto Condensed';
   font-size: 22px;
   line-height: 32px;
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   color: #141414;
-  top: -48px;
+  top: -46px;
+  text-align: center;
   position: relative; }
 
 .svg-wrapper:hover .shape {

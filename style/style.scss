@@ -116,7 +116,7 @@ header {
   display: flex;
 }
 
-.experience-wrap .col p {
+.experience-wrap .col p:last-child {
   margin: 0;
   font-size: 22px;
   padding-left: 20px;
@@ -229,11 +229,13 @@ header {
   cursor: pointer;
   position: absolute;
   top:10px;
+  z-index: 12;
   right:10px;
 }
 
 .menu-nav {
   list-style: none;
+  padding: 0;
 }
 
 
@@ -248,7 +250,7 @@ header {
   text-decoration: none;
   cursor: pointer;
   font-size: 25px;
-  border-bottom: 1px solid $toodarkgrey;
+  // border-bottom: 1px solid $toodarkgrey;
 }
 
 
@@ -308,6 +310,7 @@ header {
 }
 
 .menu-div {
+  overflow-y: scroll;
   top:0;
   right: -100%;
   position: fixed;
@@ -318,31 +321,38 @@ header {
 }
 
 
+.exp-nums {
+  font-size: 5px;
+  padding-left: 20px;
+  line-height: 1.6em;
+  margin: 0;
+}
+
 ///
 
 .svg-wrapper {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-	  margin: 0 auto;
-  width: 320px;  
+  height: 60px;
+	margin: 0 auto;
+  width: 200px;  
 }
 .shape {
   stroke-dasharray: 140 540;
-  stroke-dashoffset: -474;
-  stroke-width: 8px;
+  stroke-dashoffset: -282;
+  stroke-width: 5px;
   fill: transparent;
   stroke: #19f6e8;
-  border-bottom: 5px solid black;
+  border-bottom: 2px solid black;
   transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
 }
 .text {
   font-family: 'Roboto Condensed';
   font-size: 22px;
   line-height: 32px;
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   color: $mainblack;
-  top: -48px;
+  top: -46px;
+  text-align: center;
   position: relative;
 }
 .svg-wrapper:hover .shape {
