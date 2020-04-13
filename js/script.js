@@ -1,8 +1,5 @@
 var progress_counter = 0;
 var exp_counter = 0;
-
-console.time("time");
-
 function debounce(func, wait, immediate) {
     var timeout;
 
@@ -86,22 +83,41 @@ function pageCoords () {
 
 
 window.addEventListener('DOMContentLoaded', () => {
-    pageCoords () 
-
+    
+    pageCoords (); 
+    const body = document.querySelector('body');
     const menu_close_button = document.querySelector('[data-menu-close-button]');
     const menu_button = document.querySelector('[data-menu-button]');
     const menu = document.querySelector('[data-menu]')
-    
-    console.timeEnd('time')
+    const send_button = document.querySelector ('[data-send-button]')
+   
     window.addEventListener('scroll', pageCoords); 
-    
+
+    window.addEventListener('click', (event) => {
+        var clicked_menu_anchor = function() {
+            var target = event.target.className;
+            if(target == "menu-anchor") {
+                menu.style.right = '-100%';
+                body.style.overflowY = "scroll";
+            } 
+        }
+        console.log(clicked_menu_anchor())
+    })
+
+    send_button.addEventListener ('click', () => {
+        window.open('mailto:test@example.com');
+    })
+
     menu_button.addEventListener('click', () => {
+        body.style.overflowY= "hidden"
         menu.style.right = 0;
     })
 
     menu_close_button.addEventListener('click', () => {
         menu.style.right = '-100%';
+        body.style.overflowY = "scroll"
     })
 
+ 
 })
 

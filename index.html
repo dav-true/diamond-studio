@@ -35,7 +35,7 @@
                         <div class="svg-wrapper">
                             <svg height="50" width="200" xmlns="http://www.w3.org/2000/svg">
                                 <rect class="shape" height="50" width="200" />
-                                <p class="text"><a href="#">Home</a></p>
+                                <p class="text"><a class="menu-anchor" href="#home">Home</a></p>
                             </svg>
                         </div>
                     </li>
@@ -43,7 +43,7 @@
                         <div class="svg-wrapper">
                             <svg height="50" width="200" xmlns="http://www.w3.org/2000/svg">
                                 <rect class="shape" height="50" width="200" />
-                                <p class="text"><a href="#">About</a></p>
+                                <p class="text"><a class="menu-anchor" href="#about-us">About</a></p>
                             </svg>
                         </div>
                     </li>
@@ -52,7 +52,7 @@
                         <div class="svg-wrapper">
                             <svg height="50" width="200" xmlns="http://www.w3.org/2000/svg">
                                 <rect class="shape" height="50" width="200" />
-                                <p class="text"><a href="#">Work</a></p>
+                                <p class="text"><a class="menu-anchor" href="#projects">Work</a></p>
                             </svg>
                         </div>
                     </li>
@@ -60,7 +60,7 @@
                         <div class="svg-wrapper">
                             <svg height="50" width="200" xmlns="http://www.w3.org/2000/svg">
                                 <rect class="shape" height="50" width="200" />
-                                <p class="text"><a href="#">Proccess</a></p>
+                                <p class="text"><a class="menu-anchor" href="#proccess-video">Proccess</a></p>
                             </svg>
                         </div>
                     </li>
@@ -68,7 +68,7 @@
                         <div class="svg-wrapper">
                             <svg height="50" width="200" xmlns="http://www.w3.org/2000/svg">
                                 <rect class="shape" height="50" width="200" />
-                                <p class="text"><a href="#">Services</a></p>
+                                <p class="text"><a class="menu-anchor" href="#services">Services</a></p>
                             </svg>
                         </div>
                     </li>
@@ -76,7 +76,7 @@
                         <div class="svg-wrapper">
                             <svg height="50" width="200" xmlns="http://www.w3.org/2000/svg">
                                 <rect class="shape" height="50" width="200" />
-                                <p class="text"><a href="#">Contacts</a></p>
+                                <p class="text"><a class="menu-anchor" href="#contacts">Contacts</a></p>
                             </svg>
                         </div>
                     </li>
@@ -367,11 +367,7 @@
                     <div class="col-sm-2 col-1"></div>
                     <div class="col">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            </ol>
+                          
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <p>"Outstanding job and exceeded all expectations. It was a pleasure
@@ -389,7 +385,14 @@
                                         it lies in the joy of achievement, in the thrill of creative effort."</p>
                                     <p><span>— Franklin D. Roosevelt</span></p>
                                 </div>
+                                
                             </div>
+
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
                         </div>
                     </div>
                     <div class="col-sm-2 col-1"></div>
@@ -454,7 +457,7 @@
                                 </div>
                                 <div class="row justify-content-center py-3">
                                     <div class="col-auto justify-content-center">
-                                        <div class="send-button py-2 px-2">Send message</div>
+                                        <div class="send-button py-2 px-2" data-send-button>Send message</div>
                                     </div>
                                 </div>
 

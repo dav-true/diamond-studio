@@ -229,17 +229,20 @@ main {
       main .quoteblock .container .col {
         padding: 100px 0; }
         main .quoteblock .container .col .carousel-indicators {
-          bottom: -60px; }
+          bottom: -30px; }
           main .quoteblock .container .col .carousel-indicators li {
             width: 10px;
             height: 10px;
             border-radius: 50%; }
         main .quoteblock .container .col .carousel-item {
-          height: 160px; }
+          height: 220px; }
           main .quoteblock .container .col .carousel-item p {
             text-align: center;
             color: #f5f5f5;
             font-size: 23px; }
+            @media (max-width: 480px) {
+              main .quoteblock .container .col .carousel-item p {
+                font-size: 18px; } }
             main .quoteblock .container .col .carousel-item p:last-child {
               text-align: end;
               color: #bae99b;
