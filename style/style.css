@@ -18,9 +18,13 @@ header {
     position: fixed;
     width: 100%;
     height: 100%;
+    transition: right 0.4s ease-in-out;
     background-color: white;
     z-index: 12; }
-    header .menu .close-button {
+    @media (min-width: 768px) {
+      header .menu {
+        display: none; } }
+    header .menu-close-button {
       color: black;
       cursor: pointer;
       position: absolute;
@@ -104,7 +108,7 @@ header {
         background-color: #10c9c3;
         height: 42px;
         cursor: pointer;
-        padding: 6px 0; }
+        padding: 8px 0; }
 
 main {
   overflow-x: hidden; }
@@ -123,6 +127,12 @@ main {
     background-repeat: no-repeat; }
     main .skills .container {
       padding: 100px 24px; }
+      main .skills .container .lables {
+        width: 14ch;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 4px solid white;
+        transition: width 2s steps(14); }
       main .skills .container .progress-bar-background {
         height: 7px;
         background-color: #f5f5f5;
@@ -187,22 +197,26 @@ main {
         text-align: center; }
   main .quoteblock {
     background-color: #10c9c3; }
-    main .quoteblock .container .col {
-      padding: 100px 0; }
-      main .quoteblock .container .col .carousel-indicators {
-        bottom: -100px; }
-        main .quoteblock .container .col .carousel-indicators li {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%; }
-      main .quoteblock .container .col .carousel-item p {
-        text-align: center;
-        color: #f5f5f5;
-        font-size: 23px; }
-        main .quoteblock .container .col .carousel-item p:last-child {
-          text-align: end;
-          color: #bae99b;
-          font-size: 20px; }
+    main .quoteblock .container {
+      padding-bottom: 30px; }
+      main .quoteblock .container .col {
+        padding: 100px 0; }
+        main .quoteblock .container .col .carousel-indicators {
+          bottom: -60px; }
+          main .quoteblock .container .col .carousel-indicators li {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%; }
+        main .quoteblock .container .col .carousel-item {
+          height: 160px; }
+          main .quoteblock .container .col .carousel-item p {
+            text-align: center;
+            color: #f5f5f5;
+            font-size: 23px; }
+            main .quoteblock .container .col .carousel-item p:last-child {
+              text-align: end;
+              color: #bae99b;
+              font-size: 20px; }
   main .clients .clients-logo {
     width: 200px;
     height: 200px;

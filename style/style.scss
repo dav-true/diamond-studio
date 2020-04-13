@@ -7,12 +7,6 @@ $grid-breakpoints: (
   lg: 1024px,
 );
 
-$container-max-widths: (
-  sm: 420px,
-  md: 720px,
-  lg: 960px,
-);
-
 $bpphone: 480px;
 $bptablet: 768px;
 $bplaptop: 1024px;
@@ -49,11 +43,15 @@ header {
     position: fixed;
     width: 100%;
     height: 100%;
+    transition: right 0.4s ease-in-out;
     background-color: white;
     z-index:12;
 
+    @media(min-width:$bptablet) {
+      display: none;
+    }
     
-    .close-button {
+     &-close-button {
       color:black;
       cursor: pointer;
       position: absolute;
@@ -169,12 +167,13 @@ header {
       padding: 100px 0 50px 0;
       text-align: center;
       
+
       .contact-button {
         font-size: 18px;
         background-color: $mainblue;
         height: 42px;
         cursor: pointer;
-        padding: 6px 0;
+        padding: 8px 0;
       }
     }
   }  
@@ -183,6 +182,7 @@ header {
 
 main {
   overflow-x: hidden;
+  
 
   .about-us {
     .container {
@@ -206,6 +206,15 @@ main {
     
     .container {
       padding: 100px 24px;
+
+      .lables {
+        width: 14ch;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 4px solid white;
+        transition: width 2s steps(14);
+      }
+
       
       .progress-bar-background {
         height: 7px;
@@ -319,12 +328,13 @@ main {
     background-color: $mainblue;
 
     .container {
+      padding-bottom: 30px;
 
       .col {
         padding: 100px 0;
 
         .carousel-indicators  {
-          bottom: -100px;
+          bottom: -60px;
 
           li {
             width: 10px;
@@ -334,6 +344,8 @@ main {
         }
 
         .carousel-item {
+          height: 160px;
+
           p{
             text-align: center;
             color: $maingrey;
