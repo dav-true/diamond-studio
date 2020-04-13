@@ -83,7 +83,7 @@
                 </ul>
             </div>
         </div>
-        <div class="container top-wrap">
+        <div class="container top-wrap" id="home">
             <div class="row">
 
                 <div class="col">
@@ -91,12 +91,12 @@
                 </div>
                 <div class="col-auto align-self-center">
                     <nav class="row nav-wrap">
-                        <div class="col-auto"><a href="#">Home</a></div>
-                        <div class="col-auto"><a href="#">About</a></div>
-                        <div class="col-auto"><a href="#">Work</a></div>
-                        <div class="col-auto"><a href="#">Proccess</a></div>
-                        <div class="col-auto"><a href="#">Services</a></div>
-                        <div class="col-auto"><a href="#">Contacts</a></div>
+                        <div class="col-auto"><a href="#home">Home</a></div>
+                        <div class="col-auto"><a href="#about-us">About</a></div>
+                        <div class="col-auto"><a href="#projects">Work</a></div>
+                        <div class="col-auto"><a href="#proccess-video">Proccess</a></div>
+                        <div class="col-auto"><a href="#services">Services</a></div>
+                        <div class="col-auto"><a href="#contacts">Contacts</a></div>
                     </nav>
                     <div class='menu-button' data-menu-button>
                         <i class=" pe-7s-menu pe-3x "></i>
@@ -114,7 +114,9 @@
                     <div class="row justify-content-center">
                         <div class="col-10 col-sm-4">
                             <div class="contact-button">
-                                <a style="text-decoration: none; color:white;" href="#order"><p style="margin: auto; width: fit-content;">Contact Us</p></a>
+                                <a style="text-decoration: none; color:white;" href="#order">
+                                    <p style="margin: auto; width: fit-content;">Contact Us</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -123,7 +125,7 @@
         </div>
     </header>
     <main>
-        <div class="about-us">
+        <div class="about-us" id="about-us">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-2 col-1"></div>
@@ -141,7 +143,7 @@
             </div>
         </div>
 
-        <div class="skills">
+        <div class="skills" id="skills">
             <div class="container">
                 <div class="row">
 
@@ -165,7 +167,7 @@
                 </div>
             </div>
         </div>
-        <div class="experience">
+        <div class="experience" id="exprecience">
             <div class="container">
                 <div class="row justify-content-between row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-4">
                     <div class="col justify-content-center">
@@ -200,27 +202,56 @@
             </div>
         </div>
 
-        <div class="projects">
+        <div class="projects" id="projects">
             <div class="container">
                 <div class="row row-cols-1 row-cols-lg-2">
                     <div class="col">
                         <h3>Slack</h3>
-                        <img class="project-img" width="100%" height="95%" src="images/project_examples/project_1.png">
+                        <div class="project-img" style="background-image: url(images/project_examples/project_1.png); ">
+
+                            <a href="https://slack.com/" target="_blank">
+                                <div class="project-img-shadow">
+                                    <div style="height: 100%;">
+                                        <i class="pe-7s-look pe-4x"></i></div>
+                                </div>
+                            </a>
+                        </div>
 
                     </div>
                     <div class="col">
                         <h3>Proof</h3>
-                        <img class="project-img" width="100%" height="95%" src="images/project_examples/project_2.jpg">
+                        <div class="project-img" style="background-image: url(images/project_examples/project_2.jpg); ">
+                            <a href="https://useproof.com/" target="_blank">
+                                <div class="project-img-shadow">
+                                    <div style="height: 100%;">
+                                        <i class="pe-7s-look pe-4x"></i></div>
+                                </div>
+                            </a>
+                        </div>
 
                     </div>
                     <div class="col">
                         <h3>Traackr</h3>
-                        <img class="project-img" width="100%" height="95%" src="images/project_examples/project_4.png">
+                        <div class="project-img" style="background-image: url(images/project_examples/project_4.png);">
+                            <a href="https://www.traackr.com/" target="_blank">
+                                <div class="project-img-shadow">
+                                    <div style="height: 100%;">
+                                        <i class="pe-7s-look pe-4x"></i></div>
+                                </div>
+                            </a>
+                        </div>
 
                     </div>
                     <div class="col">
                         <h3>Blumentals</h3>
-                        <img class="project-img" width="100%" height="95%" src="images/project_examples/project_3.jpg">
+                        <div class="project-img" style="background-image: url(images/project_examples/project_3.jpg);">
+                            <a href="https://www.blumentals.net/" target="_blank">
+                                <div class="project-img-shadow">
+                                    <div style="height: 100%;">
+                                        <i class="pe-7s-look pe-4x"></i></div>
+                                </div>
+                            </a>
+                        </div>
 
                     </div>
                 </div>
@@ -234,7 +265,7 @@
             </div>
         </div>
 
-        <div class="proccess-video">
+        <div class="proccess-video" id="proccess-video">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-2 col-1"></div>
@@ -257,7 +288,7 @@
             </div>
         </div>
 
-        <div class="elements">
+        <div class="services" id="services">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                     <div class="col py-5">
@@ -330,7 +361,7 @@
             </div>
         </div>
 
-        <div class="quoteblock">
+        <div class="quoteblock" id="quoteblock">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-2 col-1"></div>
@@ -350,12 +381,12 @@
                                 </div>
                                 <div class="carousel-item">
                                     <p>"Concentrate all your thoughts upon the work in hand.
-                                         The sun's rays do not burn until brought to a focus. "</p>
+                                        The sun's rays do not burn until brought to a focus. "</p>
                                     <p><span>— Alexander Graham Bell</span></p>
                                 </div>
                                 <div class="carousel-item">
                                     <p>"Happiness is not in the mere possession of money;
-                                         it lies in the joy of achievement, in the thrill of creative effort."</p>
+                                        it lies in the joy of achievement, in the thrill of creative effort."</p>
                                     <p><span>— Franklin D. Roosevelt</span></p>
                                 </div>
                             </div>
@@ -365,7 +396,7 @@
                 </div>
             </div>
         </div>
-        <div class="clients">
+        <div class="clients" id="clients">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center py-5">
                     <div class="col">
@@ -441,7 +472,7 @@
     </main>
 
     <footer>
-        <div class="container">
+        <div class="container"  id="contacts"> 
             <div class="row row-cols-1 row-cols-md-3">
                 <div class="col">
                     <p style="color:white;">Diamond Design, Inc.</p>

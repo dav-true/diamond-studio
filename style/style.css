@@ -32,7 +32,7 @@ header {
       z-index: 12;
       right: 10px; }
     header .menu-nav-wrap {
-      padding-top: 100px;
+      padding-top: 150px;
       text-align: center; }
       header .menu-nav-wrap .menu-nav {
         list-style: none;
@@ -109,6 +109,8 @@ header {
         height: 42px;
         cursor: pointer;
         padding: 8px 0; }
+        header .top-wrap .header-description .contact-button:hover {
+          background-color: #0dafaa; }
 
 main {
   overflow-x: hidden; }
@@ -127,12 +129,6 @@ main {
     background-repeat: no-repeat; }
     main .skills .container {
       padding: 100px 24px; }
-      main .skills .container .lables {
-        width: 14ch;
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 4px solid white;
-        transition: width 2s steps(14); }
       main .skills .container .progress-bar-background {
         height: 7px;
         background-color: #f5f5f5;
@@ -174,7 +170,38 @@ main {
           margin-top: 20px;
           text-align: center; }
         main .projects .container .col .project-img {
-          cursor: pointer; }
+          background-size: 100% 100%;
+          height: 300px;
+          background-repeat: no-repeat; }
+          @media (max-width: 1200px) {
+            main .projects .container .col .project-img {
+              height: 260px; } }
+          @media (max-width: 991px) {
+            main .projects .container .col .project-img {
+              height: 340px; } }
+          @media (max-width: calc(768px - 0.02px)) {
+            main .projects .container .col .project-img {
+              height: 260px; } }
+          @media (max-width: 480px) {
+            main .projects .container .col .project-img {
+              height: 200px; } }
+          @media (max-width: calc(480px - 100px)) {
+            main .projects .container .col .project-img {
+              height: 170px; } }
+          main .projects .container .col .project-img-shadow {
+            cursor: pointer;
+            color: white;
+            transition: opacity 150ms linear;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0; }
+            main .projects .container .col .project-img-shadow:hover {
+              opacity: 1; }
+            main .projects .container .col .project-img-shadow i {
+              position: absolute;
+              top: 50%;
+              left: 45%; }
   main .load-project-container {
     background-color: #d8d8d8;
     cursor: pointer; }
@@ -189,11 +216,11 @@ main {
     @media (max-width: calc(480px - 0.02px)) {
       main .proccess-video .container .video-frame {
         height: 250px; } }
-  main .elements {
+  main .services {
     background-color: #d8d8d8; }
-    main .elements .container {
+    main .services .container {
       padding: 0 24px 0 24px; }
-      main .elements .container .col {
+      main .services .container .col {
         text-align: center; }
   main .quoteblock {
     background-color: #10c9c3; }
@@ -241,6 +268,8 @@ main {
       background-color: #10c9c3;
       color: white;
       cursor: pointer; }
+      main .order .order-form .send-button:hover {
+        background-color: #0dafaa; }
 
 footer {
   background-color: #141414;

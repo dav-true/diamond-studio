@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap");
 
+
 $grid-breakpoints: (
   xs: 0,
   sm: 480px,
@@ -10,23 +11,20 @@ $grid-breakpoints: (
 $bpphone: 480px;
 $bptablet: 768px;
 $bplaptop: 1024px;
-
-
+$bplargelaptop: 1200px;
 
 $mainblue: #10c9c3;
+$hoverblue: #0dafaa;
 $maingrey: #f5f5f5;
 $darkgrey: #d8d8d8;
 $mainblack: #141414;
 $toodarkgrey: #b1b1b1;
-
 
 * {
   line-height: 1.7em;
   font-family: "Baloo Thambi 2", cursive;
   font-size: 16px;
 }
-
-
 
 header {
   width: 100%;
@@ -38,31 +36,30 @@ header {
 
   .menu {
     overflow-y: scroll;
-    top:0;
+    top: 0;
     right: -100%;
     position: fixed;
     width: 100%;
     height: 100%;
     transition: right 0.4s ease-in-out;
     background-color: white;
-    z-index:12;
+    z-index: 12;
 
-    @media(min-width:$bptablet) {
+    @media (min-width: $bptablet) {
       display: none;
     }
-    
-     &-close-button {
-      color:black;
+
+    &-close-button {
+      color: black;
       cursor: pointer;
       position: absolute;
-      top:10px;
+      top: 10px;
       z-index: 12;
-      right:10px;
+      right: 10px;
     }
 
-
     &-nav-wrap {
-      padding-top: 100px;
+      padding-top: 150px;
       text-align: center;
 
       .menu-nav {
@@ -71,12 +68,12 @@ header {
 
         li {
           padding-bottom: 10px;
-       
+
           .svg-wrapper {
             position: relative;
             height: 60px;
             margin: 0 auto;
-            width: 200px;  
+            width: 200px;
           }
           .shape {
             stroke-dasharray: 140 540;
@@ -85,7 +82,8 @@ header {
             fill: transparent;
             stroke: #19f6e8;
             border-bottom: 2px solid black;
-            transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+            transition: stroke-width 1s, stroke-dashoffset 1s,
+              stroke-dasharray 1s;
           }
           .text {
             font-size: 22px;
@@ -103,7 +101,7 @@ header {
               stroke-dasharray: 760;
             }
           }
-        
+
           a {
             color: $mainblack;
             text-decoration: none;
@@ -111,10 +109,10 @@ header {
             font-size: 25px;
           }
         }
-      }    
+      }
     }
   }
-  
+
   .top-wrap {
     padding: 24px;
 
@@ -124,12 +122,11 @@ header {
 
       
       @media (max-width: calc(#{$bptablet} - 0.02px)) {
-        &{
+        & {
           display: none;
         }
-      
       }
-      
+
       & a {
         color: white;
         text-decoration: none;
@@ -145,7 +142,7 @@ header {
         height: 3px;
         width: 0;
         transition: width 0.25s ease;
-        -webkit-transition: width 0.25s ease; 
+        -webkit-transition: width 0.25s ease;
       }
       & a:hover::after {
         width: 100%;
@@ -166,7 +163,6 @@ header {
     .header-description {
       padding: 100px 0 50px 0;
       text-align: center;
-      
 
       .contact-button {
         font-size: 18px;
@@ -174,15 +170,17 @@ header {
         height: 42px;
         cursor: pointer;
         padding: 8px 0;
+
+        &:hover {
+          background-color: $hoverblue;
+        }
       }
     }
-  }  
+  }
 }
-
 
 main {
   overflow-x: hidden;
-  
 
   .about-us {
     .container {
@@ -203,19 +201,10 @@ main {
     color: white;
     font-size: 22px;
     background-repeat: no-repeat;
-    
+
     .container {
       padding: 100px 24px;
 
-      .lables {
-        width: 14ch;
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 4px solid white;
-        transition: width 2s steps(14);
-      }
-
-      
       .progress-bar-background {
         height: 7px;
         background-color: #f5f5f5;
@@ -239,16 +228,15 @@ main {
     .container {
       padding-bottom: 80px;
       .col {
-      display: flex;
-      padding-top: 80px;
-        
+        display: flex;
+        padding-top: 80px;
+
         .exp-nums {
           font-size: 5px;
           padding-left: 20px;
           line-height: 1.6em;
           margin: 0;
         }
-      
 
         p:last-child {
           margin: 0;
@@ -278,12 +266,54 @@ main {
         }
 
         .project-img {
-          cursor: pointer;
+          background-size: 100% 100%;
+          height: 300px;
+          background-repeat: no-repeat;
+
+          @media (max-width: $bplargelaptop) {
+            height: 260px;
+          }
+
+          @media (max-width: 991px) {
+            height: 340px;
+          }
+
+          @media (max-width: calc(#{$bptablet} - 0.02px)) {
+            height: 260px;
+          }
+
+          @media (max-width: $bpphone) {
+            height: 200px;
+          }
+
+          @media (max-width:  calc(#{$bpphone} - 100px)) {
+            height: 170px;
+          }
+
+          &-shadow {
+            cursor: pointer;
+            color:white;
+            transition: opacity 150ms linear;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+
+            &:hover {
+              opacity: 1;
+            }
+
+            i {
+              position: absolute;
+              top: 50%;
+              left: 45%;
+            }
+          }
         }
       }
     }
   }
-  
+
   .load-project-container {
     background-color: $darkgrey;
     cursor: pointer;
@@ -298,12 +328,12 @@ main {
         height: 520px;
       }
 
-      @media (max-width:  calc(#{$bptablet} - 0.02px)) {  
+      @media (max-width:  calc(#{$bptablet} - 0.02px)) {
         .video-frame {
           height: 300px;
         }
       }
-    
+
       @media (max-width: calc(#{$bpphone} - 0.02px)) {
         .video-frame {
           height: 250px;
@@ -312,12 +342,12 @@ main {
     }
   }
 
-  .elements {
+  .services {
     background-color: $darkgrey;
 
     .container {
       padding: 0 24px 0 24px;
-      
+
       .col {
         text-align: center;
       }
@@ -333,7 +363,7 @@ main {
       .col {
         padding: 100px 0;
 
-        .carousel-indicators  {
+        .carousel-indicators {
           bottom: -60px;
 
           li {
@@ -346,7 +376,7 @@ main {
         .carousel-item {
           height: 160px;
 
-          p{
+          p {
             text-align: center;
             color: $maingrey;
             font-size: 23px;
@@ -357,23 +387,21 @@ main {
               font-size: 20px;
             }
           }
-        } 
+        }
       }
     }
   }
 
   .clients {
-
     .clients-logo {
       width: 200px;
-      height: 200px; 
-      background-repeat: no-repeat; 
-      background-size: contain; 
-      background-position: center; 
+      height: 200px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
       margin: auto;
     }
   }
-  
 
   .order {
     background-color: $maingrey;
@@ -383,19 +411,16 @@ main {
     }
 
     .order-form {
-
       .name-input-col {
         text-align: left;
-      
       }
-      
+
       .email-input-col {
         text-align: right;
       }
-      
-      
+
       input {
-        width:100%;
+        width: 100%;
         height: 45px;
         outline: 0;
         padding-left: 10px;
@@ -405,26 +430,30 @@ main {
         background-color: $mainblue;
         color: white;
         cursor: pointer;
+
+        
+        &:hover {
+          background-color: $hoverblue;
+        }
       }
     }
   }
-
 }
-
 
 footer {
   background-color: $mainblack;
-  color:$toodarkgrey;
+  color: $toodarkgrey;
 
   .container {
     padding: 70px 24px;
-    
+
     .footer-email {
-      p { text-align: right; }
+      p {
+        text-align: right;
+      }
     }
     .footer-contacts {
-      
-      p{
+      p {
         margin: 0;
         text-align: end;
       }
@@ -432,7 +461,7 @@ footer {
 
     @media (max-width: calc(#{$bptablet} - 0.02px) ) {
       .footer-contacts {
-        p{
+        p {
           text-align: center;
         }
       }
@@ -447,5 +476,5 @@ footer {
         }
       }
     }
-  } 
+  }
 }
