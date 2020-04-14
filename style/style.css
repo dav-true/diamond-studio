@@ -226,10 +226,15 @@ main {
     background-color: #10c9c3; }
     main .quoteblock .container {
       padding-bottom: 30px; }
+      @media (max-width: 768px) {
+        main .quoteblock .container .carousel-control-prev {
+          display: none; }
+        main .quoteblock .container .carousel-control-next {
+          display: none; } }
       main .quoteblock .container .col {
         padding: 100px 0; }
         main .quoteblock .container .col .carousel-indicators {
-          bottom: -30px; }
+          bottom: -60px; }
           main .quoteblock .container .col .carousel-indicators li {
             width: 10px;
             height: 10px;
@@ -240,13 +245,20 @@ main {
             text-align: center;
             color: #f5f5f5;
             font-size: 23px; }
-            @media (max-width: 480px) {
+            @media (max-width: 768px) {
               main .quoteblock .container .col .carousel-item p {
                 font-size: 18px; } }
             main .quoteblock .container .col .carousel-item p:last-child {
               text-align: end;
               color: #bae99b;
               font-size: 20px; }
+  main .clients .col {
+    background-color: white;
+    border-radius: 0;
+    transition: border-radius 200ms, background-color 200ms; }
+    main .clients .col:hover {
+      border-radius: 50%;
+      background-color: #f5f5f5; }
   main .clients .clients-logo {
     width: 200px;
     height: 200px;
