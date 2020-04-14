@@ -60,17 +60,19 @@ function liveCounter (seconds, i, maxLength) {
 
 function pageCoords () {
 
-    let pageY = window.pageYOffset || document.documentElement.scrollTop;
     let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    let pageY = window.pageYOffset || document.documentElement.scrollTop;
+    const skills = document.querySelector('.skills');
+    const experience = document.querySelector('.experience');
     
-    if(pageY + windowHeight > 1000 && progress_counter == 0) {
+    if(pageY + windowHeight > skills.offsetTop && progress_counter == 0) {
         progress_counter++;
             fillBar(0.7, 0, 84);
             fillBar(1, 1, 89);
             fillBar(1.3, 2, 81);
     }
 
-    if(pageY + windowHeight > 1420 && exp_counter == 0) {
+    if(pageY + windowHeight > experience.offsetTop  && exp_counter == 0) {
         exp_counter++;
         liveCounter(1, 0, 83);
         liveCounter(1, 1, 1041);
@@ -102,10 +104,6 @@ window.addEventListener('DOMContentLoaded', () => {
             } 
         }
         console.log(clicked_menu_anchor())
-    })
-
-    send_button.addEventListener ('click', () => {
-        window.open('mailto:test@example.com');
     })
 
     menu_button.addEventListener('click', () => {
