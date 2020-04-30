@@ -97,7 +97,7 @@ function charsCounter() {
     const comment_input = document.querySelector('.comment-input');
     let regularString = comment_input.value.replace(/\s/g, '');
     char.innerHTML = regularString.length;
-    if (comment_input.value.length >= 75) {
+    if (regularString.length >= 75) {
         comment_input.style.border = '1px solid #b1b1b1'
         comment_promt.style.color = 'grey'
     }
@@ -107,10 +107,11 @@ function charsCounter() {
 
 
 function showNamePrompt() {
+    let regexp_name = /^[A-Za-z\-]+$/
     let name_input = document.querySelector('.name-input');
     let name_promt = document.querySelector('.name-prompt');
     name_input.placeholder = 'Name'
-    if (name_input.value == "") {
+    if (name_input.value == "" || regexp_name.test(name_input.value) == false ) {
         name_promt.style.display = 'block'
         name_input.style.border = '1px solid red'
         return false 
@@ -127,6 +128,7 @@ function showEmailPrompt() {
     let email_input = document.querySelector('.email-input');
     let email_promt = document.querySelector('.email-prompt')
     email_input.placeholder = 'Email'
+    
 
     if (emailValidation(email_input.value) == false || email_input.value == "") {
         email_promt.style.display = 'block'
@@ -145,9 +147,9 @@ function showEmailPrompt() {
 function showTitlePrompt() {
     let title_input = document.querySelector('.title-input');
     let title_promt = document.querySelector('.title-prompt')
-    title_input.placeholder = 'Email'
-
-    if (title_input.value == "") {
+    title_input.placeholder = 'Your title'
+    let regexp_title = title_input.value.replace(/\s/g, '');
+    if (regexp_title == "") {
         title_promt.style.display = 'block'
         title_input.style.border = '1px solid red'
         return false
@@ -164,10 +166,11 @@ function showCommentPrompt() {
     let comment_input = document.querySelector('.comment-input');
     let comment_promt = document.querySelector('.comment-prompt');
     let regularString = comment_input.value.replace(/\s/g, '');
-    comment_input.placeholder = 'Email'
+    comment_input.placeholder = 'Your comment'
 
   
     if (regularString.length < 75) {
+       
         comment_input.style.border = '1px solid red'
         comment_promt.style.color = 'red'
         return false
