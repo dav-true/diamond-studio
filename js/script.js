@@ -95,9 +95,9 @@ function charsCounter() {
     const comment_promt = document.querySelector('.comment-prompt')
     const char = document.querySelector('.chars-counter')
     const comment_input = document.querySelector('.comment-input');
-    
-    char.innerHTML = comment_input.value.length;
-    if (comment_input.value.length >= 50) {
+    let regularString = comment_input.value.replace(/\s/g, '');
+    char.innerHTML = regularString.length;
+    if (comment_input.value.length >= 75) {
         comment_input.style.border = '1px solid #b1b1b1'
         comment_promt.style.color = 'grey'
     }
@@ -105,6 +105,79 @@ function charsCounter() {
 }
 
 
+
+function showNamePrompt() {
+    let name_input = document.querySelector('.name-input');
+    let name_promt = document.querySelector('.name-prompt');
+    name_input.placeholder = 'Name'
+    if (name_input.value == "") {
+        name_promt.style.display = 'block'
+        name_input.style.border = '1px solid red'
+        return false 
+    } else {
+        name_promt.style.display = 'none'
+        name_input.style.border = '1px solid #b1b1b1'
+        return true
+    }
+
+}
+
+
+function showEmailPrompt() {
+    let email_input = document.querySelector('.email-input');
+    let email_promt = document.querySelector('.email-prompt')
+    email_input.placeholder = 'Email'
+
+    if (emailValidation(email_input.value) == false || email_input.value == "") {
+        email_promt.style.display = 'block'
+        email_input.style.border = '1px solid red'
+        return false
+    } else {
+        email_promt.style.display = 'none'
+        email_input.style.border = '1px solid #b1b1b1'
+        return true
+    }
+
+}
+
+
+
+function showTitlePrompt() {
+    let title_input = document.querySelector('.title-input');
+    let title_promt = document.querySelector('.title-prompt')
+    title_input.placeholder = 'Email'
+
+    if (title_input.value == "") {
+        title_promt.style.display = 'block'
+        title_input.style.border = '1px solid red'
+        return false
+    } else {
+        title_promt.style.display = 'none'
+        title_input.style.border = '1px solid #b1b1b1'
+        return true
+    }
+}
+
+
+
+function showCommentPrompt() {
+    let comment_input = document.querySelector('.comment-input');
+    let comment_promt = document.querySelector('.comment-prompt');
+    let regularString = comment_input.value.replace(/\s/g, '');
+    comment_input.placeholder = 'Email'
+
+  
+    if (regularString.length < 75) {
+        comment_input.style.border = '1px solid red'
+        comment_promt.style.color = 'red'
+        return false
+    } else {
+        comment_input.style.border = '1px solid #b1b1b1'
+        comment_promt.style.color = '1px solid #b1b1b1'
+        return true
+    }
+
+}
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -138,48 +211,15 @@ window.addEventListener('DOMContentLoaded', () => {
         let email_input = document.querySelector('.email-input');
         let title_input = document.querySelector('.title-input');
         let comment_input = document.querySelector('.comment-input');
-        let name_promt = document.querySelector('.name-prompt')
-        let email_promt = document.querySelector('.email-prompt')
-        let title_promt = document.querySelector('.title-prompt')
-        let comment_promt = document.querySelector('.comment-prompt')
         const char = document.querySelector('.chars-counter')
+        
+        showNamePrompt();
+        showCommentPrompt()
+        showEmailPrompt()
+        showTitlePrompt()
 
 
-        if (name_input.value == "") {
-            name_promt.style.display = 'block'
-            name_input.style.border = '1px solid red'
-        } else {
-            name_promt.style.display = 'none'
-            name_input.style.border = '1px solid #b1b1b1'
-        }
-
-        if (emailValidation(email_input.value) == false || email_input.value == "") {
-            email_promt.style.display = 'block'
-            email_input.style.border = '1px solid red'
-        } else {
-            email_promt.style.display = 'none'
-            email_input.style.border = '1px solid #b1b1b1'
-        }
-
-        if (title_input.value == "") {
-            title_promt.style.display = 'block'
-            title_input.style.border = '1px solid red'
-        } else {
-            title_promt.style.display = 'none'
-            title_input.style.border = '1px solid #b1b1b1'
-        }
-
-        if (comment_input.value.length < 50) {
-            comment_input.style.border = '1px solid red'
-            comment_promt.style.color = 'red'
-        } else {
-            comment_input.style.border = '1px solid #b1b1b1'
-            comment_promt.style.color = '1px solid #b1b1b1'
-        }
-
-
-
-        if (name_input.value !== "" && email_input.value !== "" && emailValidation(email_input.value) !== false && title_input.value !== "" && comment_input.value.length >= 50) {
+        if (showNamePrompt() == true && showEmailPrompt() == true && showTitlePrompt() == true && showCommentPrompt() == true) {
             $.ajax({
                 url: 'https://testdiamond.ew.r.appspot.com/writedata ',  // https://testdiamond.ew.r.appspot.com/writedata  http://127.0.0.1:3000/writedata
                 crossDomain: true,
@@ -187,7 +227,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 dataType: "text",
                 data: { name: name_input.value, email: email_input.value, title: title_input.value, comment: comment_input.value }
             });
-            
+
             name_input.value = ""
             email_input.value = ""
             title_input.value = ""
@@ -195,7 +235,7 @@ window.addEventListener('DOMContentLoaded', () => {
             char.innerHTML = '0'
 
             $('#exampleModalCenter').modal()
-           
+
 
         }
 

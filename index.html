@@ -455,18 +455,18 @@
                                 <div class="row row-cols-1 row-cols-md-2 ">
                                     <div class="col pt-4 pb-2 pt-md-4 pb-md-2 name-input-col"><input type="text"
                                             class="name-input" class="justify-content-center" placeholder="Name"
-                                            onfocus="this.placeholder=''" onblur="this.placeholder='Name'">
+                                            onfocus="this.placeholder=''" onblur="showNamePrompt()" onblur="this.placeholder='Name'">
                                             <p class='name-prompt'>Name can't be empty!</p></div>
                                     <div class="col py-2 pt-md-4 pb-md-2 email-input-col"><input type="email"
                                             class="email-input" placeholder="Email" onfocus="this.placeholder=''"
-                                            onblur="this.placeholder='Email'">
+                                            onblur="showEmailPrompt()">
                                             <p class='email-prompt'>Wrong email format!</p>
                                         </div>
                                 </div>
                                 <div class="row">
                                     <div class="col py-2 title-input-col">
                                         <input type="text" class="title-input" placeholder="Your title"
-                                            onfocus="this.placeholder=''" onblur="this.placeholder='Your title'">
+                                            onfocus="this.placeholder=''" onblur="showTitlePrompt()">
                                             <p class='title-prompt'>Title can't be empty!</p>
                                     </div>
                                 </div>
@@ -475,8 +475,8 @@
                                         <textarea class="comment-input" placeholder='Your comment' 
                                             onkeyup="charsCounter()"
                                             onfocus="this.placeholder=''"
-                                            onblur="this.placeholder='Your comment'"></textarea>
-                                            <p class='comment-prompt'>Write at least 50 characters, please <span class='chars-counter' style="padding-left: 10px;">0</span>/50</p>
+                                            onblur="showCommentPrompt()"></textarea>
+                                            <p class='comment-prompt'>Write at least 50 characters, please <span class='chars-counter' style="padding-left: 10px;">0</span>/75</p>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center py-3">
