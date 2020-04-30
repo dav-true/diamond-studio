@@ -1,5 +1,7 @@
 var progress_counter = 0;
 var exp_counter = 0;
+
+
 function debounce(func, wait, immediate) {
     var timeout;
 
@@ -60,6 +62,7 @@ function liveCounter(seconds, i, maxLength) {
 
 function pageCoords() {
 
+
     let windowHeight = window.innerHeight || document.documentElement.clientHeight;
     let pageY = window.pageYOffset || document.documentElement.scrollTop;
     const skills = document.querySelector('.skills');
@@ -83,8 +86,28 @@ function pageCoords() {
 
 }
 
+function emailValidation(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function charsCounter() {
+    const comment_promt = document.querySelector('.comment-prompt')
+    const char = document.querySelector('.chars-counter')
+    const comment_input = document.querySelector('.comment-input');
+    
+    char.innerHTML = comment_input.value.length;
+    if (comment_input.value.length >= 50) {
+        comment_input.style.border = '1px solid #b1b1b1'
+        comment_promt.style.color = 'grey'
+    }
+
+}
+
+
 
 window.addEventListener('DOMContentLoaded', () => {
+
 
     pageCoords();
     const body = document.querySelector('body');
@@ -92,6 +115,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const menu_button = document.querySelector('[data-menu-button]');
     const menu = document.querySelector('[data-menu]')
     const send_button = document.querySelector('[data-send-button]')
+
+
 
 
     window.addEventListener('scroll', pageCoords);
@@ -113,20 +138,66 @@ window.addEventListener('DOMContentLoaded', () => {
         let email_input = document.querySelector('.email-input');
         let title_input = document.querySelector('.title-input');
         let comment_input = document.querySelector('.comment-input');
+        let name_promt = document.querySelector('.name-prompt')
+        let email_promt = document.querySelector('.email-prompt')
+        let title_promt = document.querySelector('.title-prompt')
+        let comment_promt = document.querySelector('.comment-prompt')
+        const char = document.querySelector('.chars-counter')
 
 
-        $.ajax({
-            url: 'https://testdiamond.ew.r.appspot.com/writedata',  // https://testdiamond.ew.r.appspot.com/writedata  http://127.0.0.1:3000/writedata
-            crossDomain: true,
-            type: 'POST',
-            dataType: "text",
-            data: { name: name_input.value, email: email_input.value, title: title_input.value, comment: comment_input.value }
-        });
+        if (name_input.value == "") {
+            name_promt.style.display = 'block'
+            name_input.style.border = '1px solid red'
+        } else {
+            name_promt.style.display = 'none'
+            name_input.style.border = '1px solid #b1b1b1'
+        }
 
-        name_input.value = ""
-        email_input.value = ""
-        title_input.value = ""
-        comment_input.value = ""
+        if (emailValidation(email_input.value) == false || email_input.value == "") {
+            email_promt.style.display = 'block'
+            email_input.style.border = '1px solid red'
+        } else {
+            email_promt.style.display = 'none'
+            email_input.style.border = '1px solid #b1b1b1'
+        }
+
+        if (title_input.value == "") {
+            title_promt.style.display = 'block'
+            title_input.style.border = '1px solid red'
+        } else {
+            title_promt.style.display = 'none'
+            title_input.style.border = '1px solid #b1b1b1'
+        }
+
+        if (comment_input.value.length < 50) {
+            comment_input.style.border = '1px solid red'
+            comment_promt.style.color = 'red'
+        } else {
+            comment_input.style.border = '1px solid #b1b1b1'
+            comment_promt.style.color = '1px solid #b1b1b1'
+        }
+
+
+
+        if (name_input.value !== "" && email_input.value !== "" && emailValidation(email_input.value) !== false && title_input.value !== "" && comment_input.value.length >= 50) {
+            $.ajax({
+                url: 'https://testdiamond.ew.r.appspot.com/writedata ',  // https://testdiamond.ew.r.appspot.com/writedata  http://127.0.0.1:3000/writedata
+                crossDomain: true,
+                type: 'POST',
+                dataType: "text",
+                data: { name: name_input.value, email: email_input.value, title: title_input.value, comment: comment_input.value }
+            });
+            
+            name_input.value = ""
+            email_input.value = ""
+            title_input.value = ""
+            comment_input.value = ""
+            char.innerHTML = '0'
+
+            $('#exampleModalCenter').modal()
+           
+
+        }
 
     })
 

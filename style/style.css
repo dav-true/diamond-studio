@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap");
 * {
   line-height: 1.7em;
-  font-family: "Baloo Thambi 2", cursive;
+  font-family: "Quicksand", sans-serif;
   font-size: 16px; }
 
 header {
@@ -101,7 +100,7 @@ header {
       header .top-wrap .menu-button {
         display: none; } }
     header .top-wrap .header-description {
-      padding: 100px 0 50px 0;
+      padding: 90px 0 50px 0;
       text-align: center; }
       header .top-wrap .header-description .contact-button {
         font-size: 18px;
@@ -250,7 +249,7 @@ main {
                 font-size: 18px; } }
             main .quoteblock .container .col .carousel-item p:last-child {
               text-align: end;
-              color: #bae99b;
+              color: #ffffff;
               font-size: 20px; }
   main .clients .col {
     background-color: white;
@@ -272,17 +271,30 @@ main {
       padding: 100px 0; }
     main .order .order-form .name-input-col {
       text-align: left; }
-    main .order .order-form .email-input-col {
-      text-align: right; }
-    main .order .order-form .comment-input {
+      main .order .order-form .name-input-col::after {
+        content: "Name can't be empty!";
+        color: red;
+        padding: 5px 0 0 10px;
+        display: none; }
+    main .order .order-form p {
+      margin: 0;
+      padding: 5px 0 0 10px;
+      text-align: left;
+      color: red;
+      display: none; }
+    main .order .order-form .comment-input-col .comment-input {
       width: 100%;
       height: 150px;
       padding-left: 10px; }
+    main .order .order-form .comment-input-col p {
+      padding-top: 0px;
+      display: block;
+      color: grey; }
     main .order .order-form input {
       width: 100%;
       height: 45px;
-      outline: 0;
-      padding-left: 10px; }
+      padding-left: 10px;
+      border: 1px solid #b1b1b1; }
     main .order .order-form .send-button {
       background-color: #10c9c3;
       color: white;
@@ -300,6 +312,8 @@ footer {
     footer .container .footer-contacts p {
       margin: 0;
       text-align: end; }
+      footer .container .footer-contacts p a {
+        color: #b1b1b1; }
     @media (max-width: calc(768px - 0.02px)) {
       footer .container .footer-contacts p {
         text-align: center; }
