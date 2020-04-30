@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-
+    <link rel="shortcut icon" href="images/logo.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="style/bootstrap.min.css"> -->
@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="Icon-font-7-stroke-PIXEDEN-v-1.2.0/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" href="Icon-font-7-stroke-PIXEDEN-v-1.2.0/pe-icon-7-stroke/css/helper.css">
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
 
     <script src="js/script.js"></script>
 
@@ -23,6 +25,7 @@
 </head>
 
 <body>
+    
     <header>
         <div class="menu" data-menu>
             <div class="pe-7s-close-circle pe-3x menu-close-button" data-menu-close-button>
@@ -369,11 +372,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-2 col-1">
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
-                          </a>
-                        
+                        </a>
+
                     </div>
                     <div class="col">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -395,7 +399,7 @@
                                         it lies in the joy of achievement, in the thrill of creative effort."</p>
                                     <p><span>— Franklin D. Roosevelt</span></p>
                                 </div>
-                            
+
                             </div>
 
                             <ol class="carousel-indicators">
@@ -406,10 +410,11 @@
                         </div>
                     </div>
                     <div class="col-sm-2 col-1">
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
-                          </a>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -451,28 +456,28 @@
                             <form class="order-form">
                                 <div class="row row-cols-1 row-cols-md-2 ">
                                     <div class="col pt-4 pb-2 pt-md-4 pb-md-2 name-input-col"><input type="text"
-                                            class="justify-content-center" placeholder="Name"
+                                            class="name-input" class="justify-content-center" placeholder="Name"
                                             onfocus="this.placeholder=''" onblur="this.placeholder='Name'"></div>
                                     <div class="col py-2 pt-md-4 pb-md-2 email-input-col"><input type="email"
-                                            placeholder="Email" onfocus="this.placeholder=''"
+                                            class="email-input" placeholder="Email" onfocus="this.placeholder=''"
                                             onblur="this.placeholder='Email'"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col py-2 title-input-col">
-                                        <input type="text" placeholder="Your title" onfocus="this.placeholder=''"
-                                            onblur="this.placeholder='Your title'">
+                                        <input type="text" class="title-input" placeholder="Your title"
+                                            onfocus="this.placeholder=''" onblur="this.placeholder='Your title'">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col py-2 comment-input-col">
-                                        <input type="text" placeholder="Your comment" onfocus="this.placeholder=''"
-                                            onblur="this.placeholder='Your comment'"
-                                            style="height: 120px; width: 100%;">
+                                        <textarea class="comment-input" placeholder='Your comment'
+                                            onfocus="this.placeholder=''"
+                                            onblur="this.placeholder='Your comment'"></textarea>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center py-3">
                                     <div class="col-auto justify-content-center">
-                                        <div class="send-button py-2 px-2" data-send-button>Send message</div>
+                                        <div class="send-button py-2 px-2"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" data-send-button>Send message</div>
                                     </div>
                                 </div>
 
@@ -484,6 +489,26 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle" style="margin: auto;">Done!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <p style="text-align: center;">We will responce you as soon as possible</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 

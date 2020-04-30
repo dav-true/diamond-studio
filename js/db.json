@@ -1,9 +1,1 @@
-{
-    "requests": [
-        {
-            "client" : "1",
-            "email" : "danchik@gmail.com"
-        }
-    ]
-    
-}
+{"requests":[{"name":"Danil","email":"danchik230501@gmail.com","title":"Hello","comment":"I'm serious"},{"name":"Danil","email":"Daghgfs","title":"hgfs","comment":"hgfds"},{"name":"Heloo","email":"heloo","title":" geloghbn","comment":"hgfsfg"}]}

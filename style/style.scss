@@ -348,7 +348,7 @@ main {
   }
 
   .services {
-    background-color: $darkgrey;
+    background-color: $maingrey;
 
     .container {
       padding: 0 24px 0 24px;
@@ -445,6 +445,12 @@ main {
 
       .email-input-col {
         text-align: right;
+      }
+
+      .comment-input {
+        width:100%;
+        height: 150px;
+        padding-left:10px;
       }
 
       input {
